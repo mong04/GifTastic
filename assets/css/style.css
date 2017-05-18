@@ -1,0 +1,70 @@
+html {
+	background-color: #f2f2f2;
+	font-family: 'Baloo', cursive;
+}
+
+p {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#gifButtons {
+	margin-left: 13px;
+}
+
+button {
+	background-color: #7391bc;
+	font-size: 18px;
+	font-family: 'Arvo', serif;
+	font-weight: bold;
+	height: auto;
+	border-radius: 7px;
+	border: solid 2px #213b5f;
+	margin: 2px;
+	
+}
+
+#gif-search {
+	float: right;
+	width: 35%;
+}
+#search-label {
+	margin-bottom: 25px;
+}
+#search-input {
+	width: 100%;
+	border: solid 2px #a5a5a5;
+	border-radius: 5px;
+	height: 20px;
+	margin: 5px 0px;
+	font-family: 'Arvo', serif;
+	font-weight: bold;
+}
+
+#addActor {
+	background-color: #7391bc;
+	font-size: 18px;
+	font-family: 'Arvo', serif;
+	font-weight: bold;
+	border-radius: 7px;
+	border-radius: 7px;
+	border: solid 2px #213b5f;
+}
+
+#gifs {
+	margin-top: 0;
+	width: 68%;
+	float: left;
+}
+
+.image {
+	height: 45%;
+	margin-right: 15px;
+	margin-left: 15px;
+	float: left;
+}
+
+img {
+	width: 99%;
+	border-radius: 5px;
+}

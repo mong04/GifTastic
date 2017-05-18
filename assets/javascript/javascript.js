@@ -43,6 +43,8 @@ $(document).ready(function(){
 				gifDiv.prepend(p);
 				gifDiv.prepend(actorImage);
 
+				
+
 				$("#gifs").prepend(gifDiv);
 			}
 		})
