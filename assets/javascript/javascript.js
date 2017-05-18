@@ -2,6 +2,8 @@ $(document).ready(function(){
 
 	var actors = ["Tim Allen", "Vince Vaughn", "Sylvester Stallone", "Jon Voight", "James Woods", "Stacey Dash", "Chris Pratt", "Adam Baldwin", "Clint Eastwood", "Dennis Miller"];
 
+
+	// function to display the buttons with names from actors[]
 	function displayButtons () {
 		$("#gifButtons").empty();
 
@@ -18,6 +20,7 @@ $(document).ready(function(){
 		}
 	}
 
+	// function to create the <img> tags, assign them a class and source then display them on the DOM
 	function displayGifs () {
 		var actor = $(this).attr("actor-name");
 		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
@@ -29,7 +32,6 @@ $(document).ready(function(){
 			method: "GET"
 		}).done(function(response) {
 			var results = response.data;
-			console.log(response);
 			for (i=0; i<results.length; i++) {
 				var gifDiv = $("<div class='image'>");
 
@@ -50,14 +52,13 @@ $(document).ready(function(){
 		})
 	}
 
+	// Click event for animating/pausing the gifs when clicked on
 	$(document).on("click", "img", function() {
 		var state = $(this).attr("state");
 		var url = $(this).attr("src");
 		var animate = url.replace("200_s.gif", "200.gif");
 		var still = url.replace("200.gif", "200_s.gif");
-		console.log(animate);
-		console.log(url);
-		console.log(state);
+
 		if (state === "still") {
 			$(this).attr("src", animate);
 			$(this).attr("state", "animated");
@@ -68,6 +69,7 @@ $(document).ready(function(){
 		}
 	})
 
+	// click event for the submit button to add name to actors[] then reset the input value
 	$("#addActor").click(function(event) {
 		event.preventDefault();
 		
@@ -77,8 +79,6 @@ $(document).ready(function(){
 		}
 		else {
 		actors.push(actorValue);
-
-		console.log(actors);
 		
 		displayButtons();
 
@@ -87,13 +87,10 @@ $(document).ready(function(){
 
 	});
 
-	$(".actor-button").click(function(){
-		console.log($(this).val("actor-name"));
-	})
-
+	// click event for all generated buttons with actor's names
 	$(document).on("click", ".actor-button", displayGifs);
 
-
+	// call on function to display initial buttons
 	displayButtons();
 
 });
